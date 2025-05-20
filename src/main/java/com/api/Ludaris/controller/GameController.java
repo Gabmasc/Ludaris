@@ -1,5 +1,6 @@
 package com.api.Ludaris.controller;
 
+import com.api.Ludaris.dto.GameDto;
 import com.api.Ludaris.entities.Game;
 import com.api.Ludaris.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping
-    public List<Game> getAll(){
-        List<Game> result = gameService.findAll();
+    public List<GameDto> getAll(){
+        List<GameDto> result = gameService.findAll();
         return result;
     }
 }
