@@ -2,7 +2,6 @@ package com.api.Ludaris.controller;
 
 import com.api.Ludaris.dto.GameDTOP;
 import com.api.Ludaris.dto.GameDto;
-import com.api.Ludaris.entities.Game;
 import com.api.Ludaris.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
