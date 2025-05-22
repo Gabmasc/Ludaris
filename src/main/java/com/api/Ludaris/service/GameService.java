@@ -3,6 +3,7 @@ package com.api.Ludaris.service;
 import com.api.Ludaris.dto.GameDTOP;
 import com.api.Ludaris.dto.GameDto;
 import com.api.Ludaris.entities.Game;
+import com.api.Ludaris.projections.GameMinProjection;
 import com.api.Ludaris.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,13 @@ public class GameService {
     public GameDTOP findById(Long id){
         Game result = gameRepository.findById(id).get();
         return new GameDTOP(result);
-
     }
+
+    @Transactional(readOnly = true)
+    public List<GameDto> findByList(Long listId){
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(x -> new GameDto(x)).toList();
+    }
+
+
 }

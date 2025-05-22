@@ -22,6 +22,7 @@ public class GameDTOP {
         BeanUtils.copyProperties(entity, this);
     }
 
+
     public Long getId() {
         return id;
     }
